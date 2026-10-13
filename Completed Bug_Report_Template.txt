@@ -1,0 +1,34 @@
+ITUS102 - PRACTICAL EXAMINATION | DEBUGGING AND IMPLEMENTATION REPORT
+Date: 13-10-2026 | Task 01 - Electricity Consumption Bill Estimator
+
+Enrollment No.: ____________________ Name: ____________________
+
+SIMPLE BUGS (write a brief explanation for each)
+Bug|  Original problem				  		    	            | Correction made 											 	   	  	     | Why required 
+S1 | First navigation link points to the wrong target. 				    | Set its href to the ID of the calculator section (for example, href=“#calculator” if the section ID is calculator).      	     | The link must scroll to the correct section.
+S2 | Bottom site-information area uses a generic container. 			    | Replace the generic container tags with semantic tags, keeping the content unchanged. 				 	     | correctly identifies footer/site-information content. 
+S3 | Background color is not applied because the CSS declaration syntax is invalid. | Correct the background-color declaration to valid CSS syntax, for example: background-color: #f4f4f4; 	       	 	     | Valid CSS syntax allows the browser to apply the background color.
+S4 | Heading rule uses a selector that does not match the HTML ID. 		    | Change the selector to # followed by the heading’s exact existing ID (for example, #page-title only if that is the actual ID). | The selector must match the HTML element to style it. 
+S5 | Calculation adds 1 to the entered units. 					    | Use the entered units directly; remove the extra + 1. 									     | The bill must be calculated from the actual number of units entered. 
+S6 | Fixed charge is set to ₹500. 						    | Change the fixed charge to 50. | The required fixed charge is ₹50.
+
+CODE COMPLETION / IMPLEMENTATION (briefly state what was completed) 
+M1: Add and inside the HTML.
+M2: Add an containing Important Note and a reminder such as: “Please check the entered units and consumer type before calculating the bill.” 
+M3: Set the navigation container to display: flex; and justify-content: space-between;. 
+M4: Set the information-card container to display: grid; and grid-template-columns: repeat(2, 1fr);. 
+M5: Inside @media (max-width: 600px), set the card grid to grid-template-columns: 1fr; and the navigation to flex-direction: column;. 
+M6: Implement calculateSurcharge(amount, percentage) to return amount * percentage / 100. 
+D1: Implement chooseRate(units) using if–else: units <= 100 returns 5; units <= 300 returns 7; otherwise returns 9. 
+D2: Implement calculateBase(units, rate) to return units * rate. 
+D3: Use a for loop over [100, 200, 300, 400, 500], call chooseRate(units) and calculateBase(units, rate), and display each example. Expected base bills: 100 = ₹500; 200 = ₹1,400; 300 = ₹2,100; 400 = ₹3,600; 500 = ₹4,500.
+
+FUNCTIONAL TEST 
+Test input: 250 units; Domestic. Expected result: Rate ₹7/unit; base bill ₹1,750; surcharge ₹0; fixed charge ₹50; total ₹1,800.
+Observed result: Not browser-verified because index.html, style.css, and script.js were not included with the two uploaded text files. Run the project in a browser and replace this line with the actual observed output. 
+Mobile layout checked (Yes/No): Not verified — check at 600px width or below and then enter Yes or No.
+
+GIT VERSION CONTROL 
+git log -1 –oneline output: Not available — make a meaningful local commit, then run git log -1 --oneline and paste its output here. 
+GitHub URL (if available): Not provided. Paste the repository URL if you push the project to GitHub.
+
